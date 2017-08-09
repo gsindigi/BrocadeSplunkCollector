@@ -1,14 +1,12 @@
 #!/bin/bash
 
 #Setup run-time environment 
-DIRNAME=`dirname $0`
+# this should be the directory containing python files related to slx-collector
+export WORK_DIR=python-slx-collector
 export LOG_CFG=log.yaml
-PROGNAME=`basename $0`
-CURRENTDIR=`cd $DIRNAME/..; pwd`
-export CURRENTDIR=$CURRENTDIR
 
-cd $CURRENTDIR
+cd $WORK_DIR
 #chose python according to protobuf and Splunk ;
 #At the time of this POC, it was Python27
 #Below port is the one which is registered as a collector on SLX
-python collector_main.py server --port 54321 --json $CURRENTDIR
+python collector_main.py server --port 54321 --json $WORK_DIR

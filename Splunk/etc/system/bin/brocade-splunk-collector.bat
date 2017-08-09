@@ -1,7 +1,8 @@
 @echo off
 REM Sample bat file to set things right and launch collector
 set LOG_CFG=log.yaml
-set WORK_DIR = C:\CCSplunk\
+REM this should be the directory containing python files
+set WORK_DIR = C:\python-slx-collector\
 cd "%WORK_DIR%"
 REM chose python according to protobuf and Splunk ;
 REM At the time of this POC, it was Python27
